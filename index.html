@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FuelFast - Order Fuel Delivery</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">FuelFast</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#order">Order Fuel</a></li>
+                <li><a href="#track">Track Delivery</a></li>
+                <li><a href="#account">Account</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section id="hero">
+            <h1>Order Fuel, Delivered Fast</h1>
+            <p>Petrol, Diesel, or Hydrogen - straight to your location.</p>
+        </section>
+
+        <section id="fuel-options">
+            <h2>Select Your Fuel</h2>
+            <div class="fuel-grid">
+                <div class="fuel-card">
+                    <h3>Petrol</h3>
+                    <p>$1.50/L</p>
+                    <button data-fuel="Petrol">Order Now</button>
+                </div>
+                <div class="fuel-card">
+                    <h3>Diesel</h3>
+                    <p>$1.60/L</p>
+                    <button data-fuel="Diesel">Order Now</button>
+                </div>
+                <div class="fuel-card">
+                    <h3>Hydrogen</h3>
+                    <p>$10.00/kg</p>
+                    <button data-fuel="Hydrogen">Order Now</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="order-form" style="display: none;">
+            <h2>Place Your Order</h2>
+            <form id="fuel-order-form">
+                <label for="fuel-type">Fuel Type:</label>
+                <input type="text" id="fuel-type" readonly>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" min="1" placeholder="e.g., 20L or 5kg" required>
+                <label for="location">Delivery Location:</label>
+                <input type="text" id="location" placeholder="Enter your address" required>
+                <button type="submit">Confirm Order</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 FuelFast. All rights reserved.</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
