@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FuelFast - Order Fuel Delivery</title>
+    <base href="/">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <!-- Header -->
@@ -29,22 +31,8 @@
 
         <section id="fuel-options">
             <h2>Select Your Fuel</h2>
-            <div class="fuel-grid">
-                <div class="fuel-card">
-                    <h3>Petrol</h3>
-                    <p>$1.50/L</p>
-                    <button data-fuel="Petrol">Order Now</button>
-                </div>
-                <div class="fuel-card">
-                    <h3>Diesel</h3>
-                    <p>$1.60/L</p>
-                    <button data-fuel="Diesel">Order Now</button>
-                </div>
-                <div class="fuel-card">
-                    <h3>Hydrogen</h3>
-                    <p>$10.00/kg</p>
-                    <button data-fuel="Hydrogen">Order Now</button>
-                </div>
+            <div class="fuel-grid" id="fuel-grid">
+                <!-- Fuel types will be dynamically populated here -->
             </div>
         </section>
 
@@ -53,10 +41,29 @@
             <form id="fuel-order-form">
                 <label for="fuel-type">Fuel Type:</label>
                 <input type="text" id="fuel-type" readonly>
+
                 <label for="quantity">Quantity:</label>
                 <input type="number" id="quantity" min="1" placeholder="e.g., 20L or 5kg" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+
                 <label for="location">Delivery Location:</label>
-                <input type="text" id="location" placeholder="Enter your address" required>
+                <div class="location-input">
+                    <input type="text" id="location" placeholder="Enter your address" required>
+                    <i class="fas fa-map-marker-alt location-icon" id="location-icon"></i>
+                </div>
+
+                <label>Payment Method: Bank Transfer</label>
+                <label for="account-holder">Account Holder Name:</label>
+                <input type="text" id="account-holder" placeholder="Enter account holder name" required>
+
+                <label for="account-number">Account Number:</label>
+                <input type="text" id="account-number" placeholder="Enter account number" required>
+
+                <label for="routing-number">Routing Number:</label>
+                <input type="text" id="routing-number" placeholder="Enter routing number" required>
+
                 <button type="submit">Confirm Order</button>
             </form>
         </section>

@@ -1,0 +1,86 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "accountHolder": "John Doe",
+      "accountNumber": "1234567890",
+      "routingNumber": "987654321"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "accountHolder": "Jane Smith",
+      "accountNumber": "0987654321",
+      "routingNumber": "123456789"
+    }
+  ],
+  "fuelTypes": [
+    {
+      "id": 1,
+      "name": "Petrol",
+      "pricePerUnit": 1.5,
+      "unit": "L"
+    },
+    {
+      "id": 2,
+      "name": "Diesel",
+      "pricePerUnit": 1.6,
+      "unit": "L"
+    },
+    {
+      "id": 3,
+      "name": "Hydrogen",
+      "pricePerUnit": 10.0,
+      "unit": "kg"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "userId": 1,
+      "fuelTypeId": 1,
+      "quantity": 20,
+      "location": "123 Main St, Cityville",
+      "email": "john.doe@example.com",
+      "accountHolder": "John Doe",
+      "accountNumber": "1234567890",
+      "routingNumber": "987654321",
+      "status": "Pending",
+      "driverId": null,
+      "createdAt": "2025-03-28T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "fuelTypeId": 3,
+      "quantity": 5,
+      "location": "456 Oak Ave, Townsville",
+      "email": "jane.smith@example.com",
+      "accountHolder": "Jane Smith",
+      "accountNumber": "0987654321",
+      "routingNumber": "123456789",
+      "status": "Delivered",
+      "driverId": 1,
+      "createdAt": "2025-03-27T15:30:00Z"
+    }
+  ],
+  "drivers": [
+    {
+      "id": 1,
+      "name": "Mike Johnson",
+      "contact": "mike.johnson@fuelfast.com",
+      "phone": "+1-555-123-4567",
+      "status": "Available"
+    },
+    {
+      "id": 2,
+      "name": "Sarah Brown",
+      "contact": "sarah.brown@fuelfast.com",
+      "phone": "+1-555-987-6543",
+      "status": "On Delivery"
+    }
+  ]
+}

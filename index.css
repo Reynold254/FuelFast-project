@@ -1,5 +1,5 @@
 body {
-  font-family: 'Georgia', serif;
+  font-family: "Georgia", serif;
   margin: 0;
   padding: 0;
   background-color: #f5f5f5;
@@ -34,13 +34,35 @@ nav ul li {
 nav ul li a {
   text-decoration: none;
   color: #333;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
 #hero {
   text-align: center;
-  padding: 50px 20px;
-  background-color: #e0e0e0;
+  padding: 100px 20px;
+  background-image: url("https://economymiddleeast.com/cdn-cgi/imagedelivery/Xfg_b7GtigYi5mxeAzkt9w/economymiddleeast.com/2025/02/uae-fuel-prices.jpg/w=960,h=640");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #fff;
+  min-height: 300px;
+}
+
+#hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+#hero h1,
+#hero p {
+  position: relative;
+  z-index: 2;
 }
 
 #hero h1 {
@@ -87,7 +109,7 @@ nav ul li a {
   border: none;
   padding: 10px 20px;
   cursor: pointer;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   border-radius: 3px;
 }
 
@@ -117,9 +139,33 @@ nav ul li a {
 
 #fuel-order-form input {
   padding: 10px;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   border: 1px solid #ddd;
   border-radius: 3px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.location-input {
+  position: relative;
+}
+
+.location-input input {
+  padding-right: 40px;
+}
+
+.location-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #2c3e50;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.location-icon:hover {
+  color: #34495e;
 }
 
 #fuel-order-form button {
@@ -128,7 +174,7 @@ nav ul li a {
   border: none;
   padding: 12px;
   cursor: pointer;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   border-radius: 3px;
 }
 
