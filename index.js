@@ -1,7 +1,9 @@
 // Fetch fuel types and populate the fuel grid
 async function loadFuelTypes() {
   try {
-    const response = await fetch("http://localhost:3000/fuelTypes");
+    const response = await fetch(
+      "https://fuelfast-project.onrender.com/fuelTypes"
+    );
     const fuelTypes = await response.json();
 
     const fuelGrid = document.getElementById("fuel-grid");
@@ -71,9 +73,9 @@ document
     ) {
       try {
         // Map fuel type to fuelTypeId
-        const fuelTypes = await fetch("http://localhost:3000/fuelTypes").then(
-          (res) => res.json()
-        );
+        const fuelTypes = await fetch(
+          "https://fuelfast-project.onrender.com/fuelTypes"
+        ).then((res) => res.json());
         const fuelTypeMap = {};
         fuelTypes.forEach((fuel) => {
           fuelTypeMap[fuel.name] = fuel.id;
@@ -82,7 +84,7 @@ document
 
         // Create or find user
         const userResponse = await fetch(
-          `http://localhost:3000/users?email=${email}`
+          `https://fuelfast-project.onrender.com/users?email=${email}`
         ).then((res) => res.json());
         let userId;
         if (userResponse.length === 0) {
@@ -93,13 +95,16 @@ document
             accountNumber: accountNumber,
             routingNumber: routingNumber,
           };
-          const userPostResponse = await fetch("http://localhost:3000/users", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(newUser),
-          }).then((res) => res.json());
+          const userPostResponse = await fetch(
+            "https://fuelfast-project.onrender.com/users",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(newUser),
+            }
+          ).then((res) => res.json());
           userId = userPostResponse.id;
         } else {
           userId = userResponse[0].id;
@@ -120,7 +125,7 @@ document
           createdAt: new Date().toISOString(),
         };
 
-        await fetch("http://localhost:3000/orders", {
+        await fetch("https://fuelfast-project.onrender.com/orders", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
